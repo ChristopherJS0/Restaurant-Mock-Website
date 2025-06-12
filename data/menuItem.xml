@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <category name="Appetizers">
+    <item>
+      <name>Calamari</name>
+      <price>12</price>
+      <description>Crispy, golden-fried squid rings served with a tangy marinara dipping sauce.</description>
+    </item>
+    <item>
+      <name>Garlic Bread</name>
+      <price>8</price>
+      <description>Warm, toasted bread brushed with garlic butter and sprinkled with fresh herbs — a classic savory starter.</description>
+    </item>
+    <item>
+      <name>Mozzerella Sticks</name>
+      <price>9</price>
+      <description>Crispy breaded sticks filled with melted gooey mozzarella, served with a zesty marinara sauce.</description>
+    </item>
+  </category>
+
+  <category name="Main Dishes">
+    <item>
+      <name>Penne alla Vodka</name>
+      <price>20</price>
+      <description>Tender penne pasta tossed in a rich, creamy tomato vodka sauce with a hint of spice and parmesan.</description>
+    </item>
+    <item>
+      <name>Fettuccine Alfredo</name>
+      <price>21</price>
+      <description>Smooth, buttery Alfredo sauce coating ribbons of fettuccine, topped with grated parmesan for a rich and comforting dish.</description>
+    </item>
+    <item>
+      <name>Seafood Sauteed</name>
+      <price>25</price>
+      <description>A medley of fresh shrimp, scallops, and calamari sautéed in garlic, white wine, and herbs for a light yet flavorful dish.</description>
+    </item>
+  </category>
+
+  <category name="Desserts">
+    <item>
+      <name>Cheesecake</name>
+      <price>5</price>
+      <description>Classic New York-style cheesecake with a graham cracker crust.</description>
+    </item>
+    <item>
+      <name>Tiramisu</name>
+      <price>6</price>
+      <description>Layers of coffee-soaked ladyfingers and mascarpone cream, dusted with cocoa powder for a delightful finish.</description>
+    </item>
+    <item>
+      <name>Chocolate Lava Cake</name>
+      <price>7</price>
+      <description>Warm, rich chocolate cake with a molten center, served with a scoop of vanilla ice cream.</description>
+    </item>
+  </category>
+</menu>
