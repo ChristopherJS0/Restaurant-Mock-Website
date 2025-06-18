@@ -1,5 +1,7 @@
 <!-- RESTAURANT STARTUP SCREEN -->
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +17,7 @@
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="menu.php">Menu</a></li>
         </ul>
     </nav>

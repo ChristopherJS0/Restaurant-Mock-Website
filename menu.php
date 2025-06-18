@@ -1,4 +1,6 @@
-<?php $menu = simplexml_load_file("data/menuItem.xml");
+<?php
+  session_start();
+  $menu = simplexml_load_file("data/menuItem.xml");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +13,7 @@
   <body>
     <nav>
       <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="menu.php">Menu</a></li>
       </ul>
     </nav>
@@ -40,15 +42,26 @@
     </div>
 
     <!-- Static sidebar for cart -->
-    <div class="cart-sidebar">
-      <div>
-        <div class="cart-header">Cart</div>
-        <div class="cart-items">
-          
+    <form id="order-form" action="checkout.php" method="POST">
+      
+      <input type="hidden" name="cart_data" id="cart-data">
+      <input type="hidden" name="total_amount" id="total-amount-input">
+
+      <div class="cart-sidebar">
+        <div>
+          <div class="cart-header">Cart</div>
+          <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+          </div>
         </div>
+        <div id="cart-total">
+          <strong>Total:</strong> $<span id="total-amount">0.00</span>
+        </div>
+        <button type="submit" class="checkout-button">Continue to Checkout</button>
       </div>
-      <button class="checkout-button">Submit Order</button>
-    </div>
+
+    </form>
+
     <script src="js/cartBehavior.js"></script>          
   </body>
 </html>
