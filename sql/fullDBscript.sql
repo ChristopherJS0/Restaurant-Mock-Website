@@ -1,0 +1,28 @@
+-- 1. Create the database
+CREATE DATABASE IF NOT EXISTS restaurant;
+
+-- 2. Use the database
+USE restaurant;
+
+-- 3. Create users table
+CREATE TABLE IF NOT EXISTS users (
+    userID INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL
+);
+
+-- 4. Create orders table
+CREATE TABLE IF NOT EXISTS orders (
+    orderID INT AUTO_INCREMENT PRIMARY KEY,
+    userID INT,
+    orderDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userID) REFERENCES users(userID)
+);
+
+-- 5. Create orderitems table
+CREATE TABLE IF NOT EXISTS orderitems (
+    orderItemID INT AUTO_INCREMENT PRIMARY KEY,
+    orderID INT,
+    itemName VARCHAR(255) NOT NULL,
+    itemDescription TEXT,
+    FOREIGN KEY (orderID) REFERENCES orders(orderID)
+);

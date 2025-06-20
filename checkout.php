@@ -27,26 +27,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['cart_data'])) {
 
     <h1>Checkout</h1>
 
-    <form id="checkout-form" method="POST" action="finalize_order.php">
+    <form id="checkout-form" method="POST" action="orderwait.php">
         <label for="customerName">Enter your name (optional):</label><br/>
         <input type="text" id="customerName" name="customerName" placeholder="Leave blank to be saved as Guest123" /><br/><br/>
 
         <h2>Your Order</h2>
         <table id="order-table">
             <thead>
-            <tr><th>Item Name</th><th>Price</th><th>Remove</th></tr>
+            <tr><th>Item Name</th><th>Price</th><th>Note</th><th>Remove</th></tr>
             </thead>
             <tbody>
             <?php if (!empty($cartItems)): ?>
                 <?php foreach ($cartItems as $index => $item): ?>
-                <tr data-index="<?= $index ?>">
+                <tr>
                     <td><?= htmlspecialchars($item['name']) ?></td>
                     <td>$<?= number_format(floatval($item['price']), 2) ?></td>
+                    <td><input type="text" name="description[<?= $index ?>]" ></td>
                     <td><button type="button" class="remove-btn">Remove</button></td>
                 </tr>
                 <?php endforeach; ?>
             <?php else: ?>
-                <tr><td colspan="3">Your cart is empty.</td></tr>
+                <tr><td colspan="4">Your cart is empty.</td></tr>
             <?php endif; ?>
             </tbody>
         </table>
@@ -54,9 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['cart_data'])) {
         <p><strong>Total: $<span id="total-price"><?= number_format($totalPrice, 2) ?></span></strong></p>
 
         <!-- Hidden inputs to send updated cart data -->
-        <input type="hidden" name="cartData" id="cartDataInput" value="<?= htmlspecialchars(json_encode($cartItems)) ?>" />
+        <input type="hidden" name="cart_data" id="cartDataInput" value="<?= htmlspecialchars(json_encode($cartItems)) ?>" />
         <input type="hidden" name="totalPrice" id="totalPriceInput" value="<?= number_format($totalPrice, 2) ?>" />
-
         <button type="submit">Submit Order</button>
     </form>
     <script src="js/checkoutBehavior.js"></script>
