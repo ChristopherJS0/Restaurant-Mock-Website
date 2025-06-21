@@ -1,6 +1,11 @@
 <?php
   session_start();
   $menu = simplexml_load_file("data/menuItem.xml");
+  unset($_SESSION['orderID']);
+  unset($_SESSION['cart_data']);
+  unset($_SESSION['totalPrice']);
+  unset($_SESSION['customerName']);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,7 +64,6 @@
         </div>
         <button type="submit" class="checkout-button">Continue to Checkout</button>
       </div>
-
     </form>
 
     <script src="js/cartBehavior.js"></script>          

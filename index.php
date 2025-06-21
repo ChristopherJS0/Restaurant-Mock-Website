@@ -19,6 +19,7 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="menu.php">Menu</a></li>
+            <li><a href="admin_login.php">Admin Login</a></li>
         </ul>
     </nav>
     <!-- Salinas Image -->
