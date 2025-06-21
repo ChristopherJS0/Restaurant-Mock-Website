@@ -33,3 +33,6 @@ CREATE TABLE admin (
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL -- hashed password
 );
+
+-- 7. Create mock admin user (for testing purposes)
+INSERT INTO admin (username, password) VALUES ('admin', 'admin');
